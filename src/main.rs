@@ -15,7 +15,7 @@ async fn main() -> Result<(), ()>  {
     let mut counter = 1;
     for l in &links {
 
-        let id = Id::from_raw("https://www.youtube.com/watch?v=bKldI-XGHIw").unwrap();
+        let id = Id::from_raw(l).unwrap();
         let descrambler = VideoFetcher::from_id(id.into_owned()).unwrap()
             .fetch()
             .await.unwrap();
